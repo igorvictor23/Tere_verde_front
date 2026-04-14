@@ -13,7 +13,7 @@ async function carregarUsuarios() {
     }
 
     try {
-        const resposta = await fetch('http://localhost:8000/admin/', {
+        const resposta = await fetch('https://tere-verde-back.onrender.com/admin/', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         });
