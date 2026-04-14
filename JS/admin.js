@@ -1,7 +1,7 @@
 async function carregarEventos() {
     const token = localStorage.getItem('token_tere_verde');
     try {
-        const resposta = await fetch('http://localhost:8000/eventos/admin_events', {
+        const resposta = await fetch('https://tere-verde-back.onrender.com/eventos/admin_events', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         });
