@@ -103,7 +103,7 @@ async function buscarClimaNaAPI(dataEvento, botao, tagClima, iconeSpan, tempSpan
 
     try {
         // 2. Faz o POST enviando o JSON no "body", exatamente como seu Pydantic pediu!
-        const resposta = await fetch('http://localhost:8000/weather', {
+        const resposta = await fetch('https://tere-verde-back.onrender.com/weather', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
