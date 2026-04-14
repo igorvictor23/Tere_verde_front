@@ -6,7 +6,7 @@ let todosOsEventos = [];
 // =========================================================
 async function carregarEventosPublicos() {
     try {
-        const resposta = await fetch('http://localhost:8000/eventos/', { method: 'GET' });
+        const resposta = await fetch('https://tere-verde-back.onrender.com/eventos/', { method: 'GET' });
 
         if (resposta.ok) {
             todosOsEventos = await resposta.json(); 
