@@ -1,0 +1,144 @@
+/* =========================================
+   PAINEL ADMINISTRATIVO (CRUD)
+========================================= */
+.bg-admin {
+    background-color: var(--fundo-cinza);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge-admin {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-sair {
+    color: var(--vermelho-destaque) !important;
+    font-weight: bold;
+}
+
+.admin-main {
+    padding: 60px 0;
+}
+
+.admin-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.admin-topo h1 {
+    color: var(--verde-escuro);
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.admin-topo p {
+    color: #666;
+}
+
+.btn-novo-evento {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(46, 84, 59, 0.3);
+}
+
+.btn-novo-evento:hover {
+    background-color: var(--verde-claro);
+}
+
+/* =========================================
+   TABELA DO CRUD
+========================================= */
+.tabela-container {
+    background-color: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    overflow-x: auto; /* Permite rolagem no telemóvel */
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #f8f9fa;
+    color: var(--verde-escuro);
+    padding: 18px 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.admin-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eaeaea;
+    color: var(--texto-escuro);
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #fdfdfd;
+}
+
+/* =========================================
+   AJUSTES DA TABELA (Colunas e Botões)
+========================================= */
+/* Limita o tamanho da descrição na tabela para não quebrar o layout */
+.desc-tabela {
+    max-width: 250px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; /* Adiciona os "..." no final do texto cortado */
+    color: #666; 
+}
+
+/* Deixa o ID mais discreto, mas visível */
+.id-coluna {
+    font-weight: 600;
+    color: #999;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-acao {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-acao.editar:hover { background-color: #eaf2eb; }
+.btn-acao.excluir:hover { background-color: #fee2e2; }
+

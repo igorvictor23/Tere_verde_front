@@ -1,0 +1,264 @@
+
+/* =========================================
+   PÁGINA DE EVENTOS E FILTROS
+========================================= */
+.filtros-section {
+    background-color: var(--branco);
+    padding: 30px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.barra-filtros {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end; /* Alinha os inputs e o botão pela base */
+    background-color: var(--fundo-cinza);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Faz os campos dividirem o espaço igualmente */
+}
+
+.filtro-grupo label {
+    font-size: 0.9rem;
+    color: var(--verde-escuro);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.filtro-grupo select,
+.filtro-grupo input[type="date"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--texto-escuro);
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: var(--branco);
+}
+
+.filtro-grupo select:focus,
+.filtro-grupo input:focus {
+    border-color: var(--verde-claro);
+}
+
+.btn-filtrar {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 0 30px; /* Tiramos o padding vertical para o flexbox fazer o trabalho */
+    border-radius: 30px; /* Deixa o botão bem redondinho (estilo pílula) */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 46px; /* Mantém a altura exata dos inputs */
+    
+    /* A MÁGICA DO ALINHAMENTO PERFEITO: */
+    display: flex;
+    align-items: center; /* Centraliza na vertical perfeitamente */
+    justify-content: center; /* Centraliza na horizontal perfeitamente */
+}
+
+.btn-filtrar:hover {
+    background-color: var(--verde-claro);
+}
+
+/* Responsividade para a barra de filtros não quebrar no celular */
+@media (max-width: 768px) {
+    .barra-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn-filtrar {
+        height: auto;
+    }
+}
+
+/* =========================================
+   ESTADO VAZIO (Empty State)
+========================================= */
+.estado-vazio {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--branco);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    margin-top: 40px;
+    border: 2px dashed #d1e0d5; /* Borda tracejada dá um ar de "área vazia" */
+}
+
+.img-vazio {
+    width: 150px;
+    opacity: 0.4; /* Deixa a imagem meio transparente/apagada */
+    filter: grayscale(100%); /* Tira a cor para focar na mensagem */
+    margin-bottom: 20px;
+}
+
+.estado-vazio h3 {
+    color: var(--verde-escuro);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.estado-vazio p {
+    color: #777;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* =========================================
+   GRADE DE CARDS DE EVENTOS
+========================================= */
+.grade-eventos {
+    padding: 60px 0;
+}
+
+.grid-cards {
+    display: grid;
+    /* Isso cria uma grade automática e responsiva! */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.card-evento {
+    background-color: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-evento:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.card-img-wrapper {
+    position: relative; /* Necessário para o clima flutuar aqui dentro */
+    height: 220px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- A PÍLULA DO CLIMA --- */
+.clima-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-weight: bold;
+    color: var(--texto-escuro);
+    z-index: 10;
+}
+
+.card-conteudo {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Faz o conteúdo esticar e empurrar o botão pro final */
+}
+
+.data-evento {
+    color: var(--vermelho-destaque);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.tag-parque {
+    display: inline-block;
+    background-color: #eaf2eb;
+    color: var(--verde-escuro);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+.card-evento h3 {
+    color: var(--verde-escuro);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.desc-evento {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex: 1;
+}
+
+.btn-card {
+    text-align: center;
+    display: block;
+    background-color: var(--fundo-cinza);
+    color: var(--verde-escuro);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+}
+
+.btn-card:hover {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border-color: var(--verde-escuro);
+}
+
+/* --- Botão Sob Demanda do Clima --- */
+.linha-data-clima {
+    display: flex;
+    justify-content: space-between; /* Empurra a data pra esquerda e o botão pra direita */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.linha-data-clima .data-evento {
+    margin-bottom: 0; /* Tira a margem que tinha antes para ficar alinhado */
+}
+
+.btn-clima {
+    background: transparent;
+    border: 1px solid var(--verde-claro);
+    color: var(--verde-escuro);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-clima:hover {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+}

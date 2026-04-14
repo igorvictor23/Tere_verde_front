@@ -1,0 +1,117 @@
+
+
+/* Faz cada parque alternar a cor de fundo ligeiramente (zebra) */
+.parque-detalhe:nth-child(even) {
+    background-color: var(--branco);
+}
+
+.parque-row {
+    display: flex;
+    align-items: center; /* Alinha a foto com o centro do texto */
+    gap: 60px;
+}
+
+/* A MÁGICA DO PADRÃO "Z": Essa classe inverte a ordem (Foto Direita / Texto Esquerda) */
+.parque-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.parque-img-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.parque-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.parque-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.parque-info h2 {
+    color: var(--verde-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.parque-tag {
+    display: inline-block;
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.parque-info h3 {
+    color: var(--verde-escuro);
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.parque-info p {
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Responsividade para telas menores (empilha tudo) */
+@media (max-width: 768px) {
+    .parque-row, .parque-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* =========================================
+   CALL TO ACTION (Banner de Eventos)
+========================================= */
+.cta-eventos {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 70px 0;
+    text-align: center;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.2); 
+}
+
+.cta-eventos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-eventos p {
+    font-size: 1.2rem;
+    color: #d1e0d5; 
+    max-width: 700px;
+    margin: 0 auto 35px auto; 
+    line-height: 1.6;
+}
+
+.btn-destaque {
+    background-color: var(--vermelho-destaque);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(201, 79, 79, 0.4); 
+}
+
+/* Efeito de "pulo" ao passar o mouse */
+.btn-destaque:hover {
+    background-color: #a84242; 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(201, 79, 79, 0.6);
+}

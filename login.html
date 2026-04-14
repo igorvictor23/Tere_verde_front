@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrativo - Terê Verde</title>
+    <link rel="icon" href="imagens/favicon_montanha.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/login.css">
+    
+    <script src="JS/script.js" defer></script>
+    <script src="JS/login.js" defer></script>
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+        <div class="login-box">
+            <a href="index.html">
+                <img src="imagens/tereverde_logo.png" alt="Logo Terê Verde" class="login-logo">
+            </a>
+            
+            <h2>Painel do Administrador</h2>
+            <p>Entre com suas credenciais para gerenciar eventos e parques.</p>
+
+            <form id="form-login">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="ex: admin@tereverde.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn-login">Acessar Painel</button>
+            </form>
+
+            <a href="index.html" class="back-link">← Voltar para o site</a>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+</body>
+</html>

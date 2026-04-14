@@ -1,0 +1,77 @@
+/* =========================================
+   TERMINAL DE LOGS (Estilo Console)
+========================================= */
+.terminal-container {
+    background-color: #1e1e1e; /* Fundo escuro de editor de código */
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin-bottom: 80px;
+    font-family: 'Courier New', Courier, monospace; /* Fonte de programação */
+}
+
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #000;
+}
+
+/* Os botõezinhos estilo Mac OS */
+.dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.terminal-title {
+    color: #999;
+    font-size: 0.9rem;
+    margin-left: 15px;
+    font-family: var(--fonte-principal); /* Usa a fonte padrão para o título */
+}
+
+/* Corpo onde os textos aparecem */
+.terminal-body {
+    padding: 25px;
+    color: #d4d4d4;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-height: 500px;
+    overflow-y: auto; /* Cria barra de rolagem se tiver muito log */
+}
+
+.log-linha {
+    margin-bottom: 6px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Efeito de destaque ao passar o mouse na linha */
+.log-linha:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* As cores específicas do seu HTML */
+.log-data {
+    color: #6a9955; /* Verde suave para datas */
+    margin-right: 12px;
+}
+
+.log-tipo {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* O "Color Coding" do console */
+.log-tipo.info { color: #569cd6; }    /* Azul */
+.log-tipo.aviso { color: #ce9178; }   /* Laranja/Amarelo */
+.log-tipo.erro { color: #f44747; }    /* Vermelho */
+.log-tipo.sucesso { color: #4ec9b0; } /* Verde Ciano */

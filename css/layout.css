@@ -1,0 +1,195 @@
+/* =========================================
+   ESTRUTURA GERAL
+========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO
+========================================= */
+.header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 80px; 
+    width: auto;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--verde-escuro);
+    font-weight: 600;
+    transition: color 0.3s;
+    position: relative; /* Necessário para a animação do traço embaixo */
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    color: var(--verde-claro);
+}
+
+/* Animação do traço verde ao passar o mouse */
+.nav-menu a:not(.btn-admin)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--verde-claro);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:not(.btn-admin):hover::after {
+    width: 100%;
+}
+
+/* Botão Vermelho para o Login Admin */
+.btn-admin {
+    background-color: var(--branco);
+    color: var(--vermelho-destaque) !important;
+    border: 2px solid var(--vermelho-destaque);
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: all 0.3s !important;
+}
+
+.btn-admin:hover {
+    background-color: var(--vermelho-destaque);
+    color: var(--branco) !important;
+}
+
+/* =========================================
+   RODAPÉ (Footer)
+========================================= */
+.footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 60px 0 0 0;
+    margin-top: 60px; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info {
+    flex: 2; 
+    min-width: 280px;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 15px;
+    background-color: var(--branco); 
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.footer-info p {
+    color: #d1e0d5; 
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+.footer-links, .footer-contact {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links h3, .footer-contact h3 {
+    color: var(--verde-claro);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #d1e0d5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--branco);
+}
+
+.admin-link {
+    color: var(--vermelho-destaque) !important;
+    font-weight: bold;
+}
+
+.admin-link:hover {
+    color: #ff6b6b !important; 
+}
+
+.footer-contact p {
+    color: #d1e0d5;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    background-color: #1f3b28; 
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #a3b8a9;
+}
+
+/* =========================================
+   TÍTULO DA PÁGINA (CABEÇALHO PADRÃO)
+========================================= */
+.titulo-pagina {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.titulo-pagina h1 {
+    color: var(--branco);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.titulo-pagina p {
+    color: #d1e0d5; /* Um tom de verde bem clarinho, quase branco */
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}

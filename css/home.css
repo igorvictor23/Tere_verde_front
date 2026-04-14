@@ -1,0 +1,175 @@
+/* =========================================
+   HERO SECTION (Banner Inicial)
+========================================= */
+.hero {
+    background-color: var(--verde-escuro);
+    /* No futuro, podemos colocar uma foto de Teresópolis no fundo aqui! */
+    color: var(--branco);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--branco);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #e0e0e0;
+}
+
+.btn-primary {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #5a9645; /* Um tom um pouco mais escuro para o hover */
+}
+
+/* =========================================
+   SEÇÃO: SOBRE A CIDADE
+========================================= */
+.sobre-cidade {
+    padding: 80px 0;
+    background-color: var(--branco);
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Permite que o texto e imagem se empilhem em telas menores */
+}
+
+.sobre-texto {
+    flex: 1; /* Faz o texto ocupar metade do espaço */
+    min-width: 300px;
+}
+
+.sobre-texto h2 {
+    color: var(--verde-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #555555; /* Um cinza médio para leitura confortável */
+}
+
+.sobre-imagem-wrapper {
+    flex: 1; /* Faz a imagem ocupar a outra metade do espaço */
+    min-width: 300px;
+}
+
+.sobre-img {
+    width: 100%; /* A imagem sempre vai se adaptar ao tamanho da caixa dela */
+    aspect-ratio: 4 / 3; /* Força a imagem a ter uma proporção retangular horizontal */
+    object-position: center; /* Centraliza a parte mais importante da imagem */
+    border-radius: 12px; /* Bordas arredondadas para um visual mais moderno */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave para destacar a foto */
+    object-fit: cover; /* Garante que a imagem não fique distorcida */
+}
+
+/* =========================================
+   SEÇÃO: DICAS PARA O TRILHEIRO
+========================================= */
+.dicas-trilha {
+    background-color: #eaf2eb; /* Um verde bem suave e relaxante para o fundo */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.titulo-secao {
+    color: var(--verde-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.dicas-carrossel-container {
+    position: relative;
+    max-width: 700px; /* Limita a largura para a leitura não ficar cansativa */
+    margin: 0 auto;
+    background-color: var(--branco);
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra elegante */
+    min-height: 280px; /* Garante que o card não fique "pulando" de tamanho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dica-slide {
+    display: none; /* Esconde todas as dicas por padrão */
+    animation: fadeDica 0.5s ease;
+}
+
+.dica-slide.ativo {
+    display: block; /* Mostra apenas a dica ativa */
+}
+
+.dica-icone {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.dica-slide h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.dica-slide p {
+    color: #555555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Setinhas do card de dicas */
+.btn-dica {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    /* Centraliza a setinha dentro do botão redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-dica:hover {
+    background-color: var(--verde-escuro);
+}
+
+/* Posiciona as setinhas metade para fora do card e metade para dentro */
+.btn-dica.anterior { left: -20px; }
+.btn-dica.proximo { right: -20px; }
+
+@keyframes fadeDica {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}

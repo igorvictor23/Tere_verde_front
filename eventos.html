@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos e Agenda - Terê Verde</title>
+    <link rel="icon" href="imagens/favicon_montanha.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/eventos.css">
+
+    <script src="JS/script.js" defer></script>
+    <script src="JS/eventos.js" defer></script>
+    <script src="JS/chat.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="imagens/tereverde_logo.png" alt="Logo Terê Verde" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="parques.html">Parques</a></li>
+                    <li><a href="eventos.html" class="active">Eventos</a></li>
+                    <li><a href="login.html" class="btn-admin">Login Administrativo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="titulo-pagina">
+            <div class="container">
+                <h1>Agenda de Eventos</h1>
+                <p>Participe de trilhas guiadas, mutirões ecológicos e workshops nos nossos parques.</p>
+            </div>
+        </section>
+
+        <section class="filtros-section">
+            <div class="container">
+                <div class="barra-filtros">
+    
+                    <div class="filtro-grupo">
+                        <label for="filtro-parque">Filtrar por Local:</label>
+                        <select id="filtro-parque">
+                            <option value="Todos">Todos os Parques</option>
+                            <option value="PARNASO">PARNASO</option>
+                            <option value="Três Picos">Três Picos</option>
+                            <option value="Montanhas de Teresópolis">Montanhas de Teresópolis</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <label for="filtro-data">A partir de:</label>
+                        <input type="date" id="filtro-data">
+                    </div>
+
+                    <button type="button" class="btn-filtrar" id="btn-buscar-eventos">Buscar Eventos</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="grade-eventos">
+            <div class="container" id="container-dos-cards">
+                
+                <div class="estado-vazio">
+                    <img src="imagens/tereverde_logo.png" alt="Nenhum evento" class="img-vazio">
+                    <h3>A montanha está silenciosa...</h3>
+                    <p>Não encontramos nenhum evento programado para esta data ou parque no momento. Que tal tentar um filtro diferente ou explorar as trilhas por conta própria?</p>
+                </div>
+
+                <div class="grid-cards">
+                    
+                    <div class="card-evento">
+                        <div class="card-img-wrapper">
+                            <img src="imagens/foto_tres_picos.jpg" alt="Mutirão Três Picos" class="card-img">
+                            
+                            <div class="clima-tag" title="Previsão do Tempo" style="display: none">
+                                <span class="clima-icone">☀️</span>
+                                <span class="clima-temp">22°C</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-conteudo">
+                            <div class="linha-data-clima">
+                                <span class="data-evento">📅 15 de Maio, 2026</span>
+                                <button type="button" class="btn-clima">⛅ Ver Clima</button>
+                            </div>
+                            <span class="tag-parque">Três Picos</span>
+                            
+                            <h3>Mutirão de Limpeza na Trilha</h3>
+                            <p class="desc-evento">Junte-se a nós para um dia de conscientização e limpeza da trilha principal.</p>
+                            
+                            <a href="#" class="btn-card">Inscrever-se</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+                       
+    </main>
+
+    </body>
+</html>

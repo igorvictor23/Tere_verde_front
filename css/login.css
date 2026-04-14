@@ -1,0 +1,37 @@
+/* =========================================
+   PÁGINA DE LOGIN
+========================================= */
+.login-page {
+    background: linear-gradient(rgba(46, 84, 59, 0.8), rgba(46, 84, 59, 0.8)), 
+                url('../imagens/foto_principal.jpg'); 
+    background-size: cover; background-position: center;
+    display: flex; justify-content: center; align-items: center; min-height: 100vh;
+}
+
+.login-box {
+    background-color: var(--branco); padding: 40px; border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); width: 100%; max-width: 400px; text-align: center;
+}
+
+.login-logo { height: 50px; margin-bottom: 20px; }
+
+.login-box h2 { color: var(--verde-escuro); margin-bottom: 10px; font-size: 1.5rem; }
+.login-box p { color: #666; font-size: 0.9rem; margin-bottom: 30px; }
+
+/* Garante que o texto em cima do input na tela de login seja verde escuro */
+.login-box label { color: var(--verde-escuro); }
+
+.btn-login {
+    width: 100%; padding: 14px; background-color: var(--verde-escuro); color: var(--branco);
+    border: none; border-radius: 8px; font-size: 1rem; font-weight: bold;
+    cursor: pointer; transition: background-color 0.3s; margin-top: 10px;
+}
+
+.btn-login:hover { background-color: var(--verde-claro); }
+
+.back-link {
+    display: block; margin-top: 25px; text-decoration: none; color: #888;
+    font-size: 0.85rem; transition: color 0.3s;
+}
+
+.back-link:hover { color: var(--verde-escuro); }

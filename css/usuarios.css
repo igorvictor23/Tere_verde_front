@@ -1,0 +1,29 @@
+/* =========================================
+   TAGS DE STATUS DOS USUÁRIOS
+========================================= */
+.status-tag {
+    padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;
+    font-weight: bold; display: inline-block; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.status-ativo { background-color: #eaf2eb; color: var(--verde-escuro); }
+.status-inativo { background-color: #ffe6e6; color: var(--vermelho-destaque); }
+
+/* =========================================
+   BOTÕES ESPECÍFICOS DA TABELA
+========================================= */
+.btn-bloquear {
+    background-color: transparent; color: var(--vermelho-destaque);
+    border: 1px solid var(--vermelho-destaque); padding: 6px 10px;
+    border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.2s;
+}
+
+.btn-bloquear:hover { background-color: var(--vermelho-destaque); color: white; }
+
+.btn-desbloquear {
+    background-color: transparent; color: var(--verde-escuro);
+    border: 1px solid var(--verde-escuro); padding: 6px 10px;
+    border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.2s;
+}
+
+.btn-desbloquear:hover { background-color: var(--verde-escuro); color: white; }

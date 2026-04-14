@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terê Verde - Parques Naturais</title>
+    <link rel="icon" href="imagens/favicon_montanha.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="JS/script.js" defer></script>
+    <script src="JS/chat.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="imagens/tereverde_logo.png" alt="Logo Terê Verde" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="parques.html">Parques</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="login.html" class="btn-admin">Login Administrativo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Descubra o Coração Verde do Rio de Janeiro</h1>
+                <p>Explore as belezas naturais, trilhas e a biodiversidade do PARNASO, Parque Montanhas de Teresópolis e Três Picos.</p>
+                <a href="parques.html" class="btn-primary">Conhecer os Parques</a>
+            </div>
+        </section>
+
+        <section class="sobre-cidade">
+            <div class="container sobre-content">
+                <div class="sobre-texto">
+                    <h2>A Capital Nacional do Montanhismo</h2>
+                    <p>Abraçada pela Serra dos Órgãos, Teresópolis é um refúgio para quem busca conexão real com a natureza. Com o ar puro da serra e a maior porção de Mata Atlântica contínua do estado, a cidade é o ponto de partida perfeito para aventuras inesquecíveis.</p>
+                    <p>Aqui, a preservação ambiental e o ecoturismo andam lado a lado, oferecendo trilhas, cachoeiras e mirantes de tirar o fôlego.</p>
+                </div>
+                <div class="sobre-imagem-wrapper">
+                    <img src="imagens/pexels-hector-fortaleza-1311874467-29820135.webp" alt="Vista das montanhas de Teresópolis" class="sobre-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="dicas-trilha">
+            <div class="container">
+                <h2 class="titulo-secao">Dicas Rápidas para o Trilheiro</h2>
+                
+                <div class="dicas-carrossel-container">
+                    <div class="dica-slide ativo">
+                        <div class="dica-icone">🎒</div>
+                        <h3>O que levar na mochila</h3>
+                        <p>Leve sempre água (pelo menos 2L), lanches leves, protetor solar, repelente e um casaco corta-vento. A preparação é a chave para uma trilha segura e confortável!</p>
+                    </div>
+
+                    <div class="dica-slide">
+                        <div class="dica-icone">🌦️</div>
+                        <h3>Clima na Serra</h3>
+                        <p>O tempo em Teresópolis pode mudar rapidamente. Mesmo em dias ensolarados, é comum a temperatura cair ou o famoso "ruço" (neblina) descer à tarde. Vá sempre preparado.</p>
+                    </div>
+
+                    <div class="dica-slide">
+                        <div class="dica-icone">🥾</div>
+                        <h3>Segurança em Primeiro Lugar</h3>
+                        <p>Use calçados fechados e com boa aderência. Nunca saia das trilhas demarcadas e sempre avise a alguém qual roteiro você fará no dia. Respeite os limites da natureza.</p>
+                    </div>
+
+                    <div class="dica-slide">
+                        <div class="dica-icone">🗺️</div>
+                        <h3>Navegação Offline</h3>
+                        <p>O sinal de celular é praticamente inexistente na maior parte do PARNASO e dos Três Picos. Baixe os mapas das trilhas no seu celular antes de sair de casa (em apps como Wikiloc) e mantenha a bateria carregada.</p>
+                    </div>
+
+                    <div class="dica-slide">
+                        <div class="dica-icone">🐢</div>
+                        <h3>Respeite seu próprio ritmo</h3>
+                        <p>A subida para a Pedra do Sino, por exemplo, é longa e exige fôlego. Não tente acompanhar o ritmo de pessoas mais experientes se você estiver começando. Faça pausas curtas, respire o ar puro e aproveite a jornada!</p>
+                    </div>
+
+                    <button class="btn-dica anterior" onclick="mudarDica(-1)">&#10094;</button>
+                    <button class="btn-dica proximo" onclick="mudarDica(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <img src="imagens/tereverde_logo.png" alt="Logo Terê Verde" class="footer-logo">
+                <p>O seu guia definitivo para os parques naturais, trilhas e a biodiversidade da Capital Nacional do Montanhismo.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Acesso Rápido</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="parques.html">Sobre os Parques</a></li>
+                    <li><a href="eventos.html">Agenda de Eventos</a></li>
+                    <li><a href="login.html" class="admin-link">Login Administrativo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p>✉️ contato@tereverde.com.br</p>
+                <p>📍 Teresópolis - RJ</p>
+                <p>🎓 Trabalho Acadêmico</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Terê Verde. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

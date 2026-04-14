@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Terê Verde</title>
+    <link rel="icon" href="imagens/favicon_montanha.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        const token = localStorage.getItem('token_tere_verde');
+        if (!token) {
+            window.location.replace('login.html'); 
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="JS/script.js" defer></script>
+    <script src="JS/admin.js" defer></script>
+</head>
+<body class="bg-admin">
+
+    <header class="header">
+        <div class="container admin-header">
+            <div class="admin-logo">
+                <img src="imagens/tereverde_logo.png" alt="Logo Terê Verde" class="logo-img">
+                <span class="badge-admin">Painel Admin</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" target="_blank">Ver Site</a></li>
+                    <li><a href="admin.html" class="active">Eventos</a></li> <li><a href="usuarios.html">Usuários</a></li>
+                    <li><a href="logs.html">Logs</a></li> <li><a href="login.html" id="btn-logout" class="btn-sair">Sair (Logout)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="container">
+            
+            <div class="admin-topo">
+                <div>
+                    <h1>Gerenciamento de Eventos</h1>
+                    <p>Crie, edite ou remova as atividades dos parques.</p>
+                </div>
+                <button class="btn-novo-evento">+ Novo Evento</button>
+            </div>
+
+            <div class="tabela-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>Nome do Evento</th>
+                            <th>Parque</th>
+                            <th>Criador</th>
+                            <th>Descrição</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="modal-evento" class="modal-overlay">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2 id="modal-titulo">Cadastrar Novo Evento</h2>
+                <button class="btn-fechar" id="btn-fechar-modal">&times;</button>
+            </div>
+            
+            <form id="form-evento" action="#" method="POST">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="nome_evento">Nome do Evento</label>
+                        <input type="text" id="nome_evento" name="nome" placeholder="Ex: Trilha da Pedra do Sino" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="data_evento">Data</label>
+                        <input type="date" id="data_evento" name="data" required>
+                    </div>
+
+                    <div class="input-group linha-cheia">
+                        <label for="parque_evento">Parque</label>
+                        <select id="parque_evento" name="parque" required>
+                            <option value="PARNASO">PARNASO</option>
+                            <option value="Três Picos">Três Picos</option>
+                            <option value="Montanhas de Teresópolis">Montanhas de Teresópolis</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+                    <label for="desc_evento">Descrição</label>
+                    <textarea id="desc_evento" name="descricao" rows="4" placeholder="Detalhes sobre a trilha, o que levar, etc..."></textarea>
+                </div>
+
+                <div class="modal-rodape">
+                    <button type="button" class="btn-cancelar" id="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-salvar">Salvar Evento</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-confirmacao" class="modal-overlay">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-cabecalho" style="border-bottom: none; margin-bottom: 10px; padding-bottom: 0;">
+                <h2 style="color: var(--vermelho-destaque);">Confirmar Exclusão</h2>
+            </div>
+            
+            <p style="text-align: center; color: #555; margin-bottom: 25px; line-height: 1.6;">
+                Tem certeza que deseja excluir este evento definitivamente?<br><strong>Esta ação não pode ser desfeita.</strong>
+            </p>
+
+            <div class="modal-rodape" style="justify-content: center;">
+                <button type="button" class="btn-cancelar" onclick="fecharModalConfirmacao()">Cancelar</button>
+                <button type="button" class="btn-deletar" id="btn-confirmar-exclusao">Sim, Excluir</button>
+            </div>
+        </div>
+    </div>
+    <div id="toast-container"></div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* =========================================
+   COMPONENTE GLOBAL: MODAIS
+========================================= */
+.modal-overlay {
+    display: none; 
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(3px);
+    z-index: 9999; justify-content: center; align-items: center;
+}
+
+.modal-content, .modal-conteudo {
+    background-color: var(--branco);
+    width: 90%; max-width: 500px; border-radius: 12px;
+    padding: 30px 40px; position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    animation: abrirModal 0.3s ease-out;
+}
+
+@keyframes abrirModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h2, .modal-cabecalho h2 {
+    color: var(--verde-escuro); margin-bottom: 25px; font-size: 1.5rem;
+}
+
+.btn-fechar-modal, .btn-fechar {
+    position: absolute; top: 15px; right: 15px;
+    background: none; border: none; font-size: 1.5rem; color: #999;
+    cursor: pointer; transition: color 0.3s;
+}
+
+.btn-fechar-modal:hover, .btn-fechar:hover { color: var(--vermelho-destaque); }
+
+/* =========================================
+   COMPONENTE GLOBAL: FORMULÁRIOS E INPUTS
+========================================= */
+.form-grupo, .input-group {
+    display: flex; flex-direction: column; margin-bottom: 15px; text-align: left;
+}
+
+.form-grupo label, .input-group label {
+    font-weight: 600; margin-bottom: 5px; color: var(--texto-escuro); font-size: 0.95rem;
+}
+
+/* CORREÇÃO AQUI: Adicionado width: 100% para os inputs não ficarem espremidos */
+.form-grupo input, .input-group input, .input-group select, .input-group textarea {
+    width: 100%; 
+    padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;
+    outline: none; transition: border-color 0.3s; font-family: inherit; background-color: var(--branco);
+}
+
+.form-grupo input:focus, .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+    border-color: var(--verde-claro);
+}
+
+/* CORREÇÃO AQUI: Deixa o usuário puxar a caixinha de descrição apenas para baixo */
+.input-group textarea {
+    resize: vertical;
+}
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+/* CORREÇÃO AQUI: A classe que faz o item ocupar as duas colunas inteiras do grid */
+.linha-cheia { grid-column: 1 / -1; }
+
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* =========================================
+   COMPONENTE GLOBAL: BOTÕES DE AÇÃO
+========================================= */
+.modal-acoes, .modal-rodape {
+    display: flex; justify-content: flex-end; gap: 12px; margin-top: 25px;
+}
+
+.btn-cancelar {
+    background-color: transparent; border: 1px solid #ccc; color: #666;
+    padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;
+}
+
+.btn-cancelar:hover { background-color: #f1f1f1; color: var(--texto-escuro); }
+
+.btn-salvar {
+    background-color: var(--verde-escuro); color: var(--branco); border: none;
+    padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background-color 0.3s;
+}
+
+.btn-salvar:hover { background-color: var(--verde-claro); }
+
+.btn-deletar {
+    background-color: var(--vermelho-destaque); color: var(--branco); border: none;
+    padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background-color 0.3s;
+}
+
+.btn-deletar:hover { background-color: #a83d3d; }
+
+/* =========================================
+   COMPONENTE GLOBAL: TOASTS DE NOTIFICAÇÃO
+========================================= */
+#toast-container { position: fixed; top: 20px; right: 20px; z-index: 10000; display: flex; flex-direction: column; gap: 10px; }
+.toast { min-width: 250px; padding: 15px 20px; border-radius: 8px; color: var(--branco); font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; transform: translateX(120%); opacity: 0; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.toast.mostrar { transform: translateX(0); opacity: 1; }
+.toast.sucesso { background-color: #27c93f; border-left: 6px solid #1e9e30; }
+.toast.erro { background-color: #ff5f56; border-left: 6px solid #cc4c45; }
