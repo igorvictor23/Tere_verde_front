@@ -6,7 +6,7 @@ async function carregarLogs() {
     const containerTerminal = document.querySelector('.terminal-body');
 
     try {
-        const resposta = await fetch('http://localhost:8000/logs/', {
+        const resposta = await fetch('https://tere-verde-back.onrender.com/logs/', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         });
