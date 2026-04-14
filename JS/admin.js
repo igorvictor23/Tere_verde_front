@@ -121,7 +121,7 @@ document.querySelector('.btn-novo-evento').addEventListener('click', () => {
 async function atualizarEvento(idDoEvento, dadosDoFormulario) {
     const token = localStorage.getItem('token_tere_verde');
     try {
-        const resposta = await fetch(`http://localhost:8000/eventos/${idDoEvento}`, {
+        const resposta = await fetch(`https://tere-verde-back.onrender.com/eventos/${idDoEvento}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ document.getElementById('btn-confirmar-exclusao').addEventListener('click', asyn
     const token = localStorage.getItem('token_tere_verde');
 
     try {
-        const resposta = await fetch(`http://localhost:8000/eventos/${idParaDeletar}`, {
+        const resposta = await fetch(`https://tere-verde-back.onrender.com/eventos/${idParaDeletar}`, {
             method: 'DELETE',
             headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -194,7 +194,7 @@ document.getElementById('btn-confirmar-exclusao').addEventListener('click', asyn
 async function criarEvento(dadosDoFormulario) {
     const token = localStorage.getItem('token_tere_verde');
     try {
-        const resposta = await fetch(`http://localhost:8000/eventos/`, {
+        const resposta = await fetch(`https://tere-verde-back.onrender.com/eventos/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
