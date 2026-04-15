@@ -6,7 +6,7 @@ let todosOsEventos = [];
 // =========================================================
 async function carregarEventosPublicos() {
     try {
-        const resposta = await fetch('http://localhost:8000/eventos/', { method: 'GET' });
+        const resposta = await fetch('https://tere-verde-back.onrender.com/eventos/', { method: 'GET' });
 
         if (resposta.ok) {
             todosOsEventos = await resposta.json(); 
@@ -73,7 +73,7 @@ function renderizarCards(eventos) {
                 <span class="tag-parque">${evento.parque}</span>
                 <h3>${evento.titulo}</h3>
                 <p class="desc-evento">${descricao}</p>
-                <a href="#" class="btn-card">Se Inscrever</a>
+                <button type="button" class="btn-card btn-inscrever">Se Inscrever</button>
             </div>
         `;
 
@@ -87,6 +87,13 @@ function renderizarCards(eventos) {
             // Passa a data bruta do evento e os elementos HTML que precisam ser atualizados
             buscarClimaNaAPI(evento.data, btnClima, tagClima, iconeSpan, tempSpan);
         });
+
+        const btnInscrever = card.querySelector('.btn-inscrever');
+        btnInscrever.addEventListener('click', () => {
+            document.getElementById('modal-inscricao').classList.remove('oculto');
+        });
+
+        
 
         container.appendChild(card);
     });
@@ -103,7 +110,7 @@ async function buscarClimaNaAPI(dataEvento, botao, tagClima, iconeSpan, tempSpan
 
     try {
         // 2. Faz o POST enviando o JSON no "body", exatamente como seu Pydantic pediu!
-        const resposta = await fetch('http://localhost:8000/weather', {
+        const resposta = await fetch('https://tere-verde-back.onrender.com/weather', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -161,5 +168,46 @@ function aplicarFiltros() {
 
     renderizarCards(eventosFiltrados);
 }
+
+// =========================================================
+// 5. LÓGICA DO MODAL E TOAST DE INSCRIÇÃO
+// =========================================================
+const modalInscricao = document.getElementById('modal-inscricao');
+const btnFecharModal = document.getElementById('btn-fechar-modal');
+const btnEnviarInscricao = document.getElementById('btn-enviar-inscricao');
+const inputEmail = document.getElementById('input-email');
+const toastMensagem = document.getElementById('toast-mensagem');
+
+// Fechar Modal
+btnFecharModal.addEventListener('click', () => {
+    modalInscricao.classList.add('oculto');
+    inputEmail.value = ''; // Limpa o campo
+});
+
+// Enviar e mostrar Toast
+btnEnviarInscricao.addEventListener('click', () => {
+    const email = inputEmail.value.trim();
+
+    if (email !== '' && email.includes('@')) {
+        // 1. Esconde o modal
+        modalInscricao.classList.add('oculto');
+        
+        // 2. Escreve a mensagem no toast
+        toastMensagem.textContent = `Inscrição enviada para o email: ${email}`;
+        
+        // 3. Mostra o toast
+        toastMensagem.classList.remove('oculto');
+        
+        // 4. Esconde o toast depois de 3.5 segundos
+        setTimeout(() => {
+            toastMensagem.classList.add('oculto');
+        }, 3500);
+
+        // 5. Limpa o input
+        inputEmail.value = '';
+    } else {
+        alert("Por favor, insira um e-mail válido com @.");
+    }
+});
 
 document.getElementById('btn-buscar-eventos').addEventListener('click', aplicarFiltros);
