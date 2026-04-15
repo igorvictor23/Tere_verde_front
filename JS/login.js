@@ -24,7 +24,7 @@ formLogin.addEventListener('submit', async function(event) {
     const senhaDigitada = inputSenha.value;
 
     try {
-        const resposta = await fetch('http://localhost:8000/admin/login', {
+        const resposta = await fetch('https://tere-verde-back.onrender.com/admin/login', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json' 

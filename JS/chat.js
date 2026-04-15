@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 3. O FETCH: Conexão com o seu FastAPI
         try {
-            const resposta = await fetch('http://localhost:8000/chat/', {
+            const resposta = await fetch('https://tere-verde-back.onrender.com/chat/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ mensagem: textoUsuario }) // O que o Pydantic espera

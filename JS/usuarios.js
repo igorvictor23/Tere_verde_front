@@ -13,7 +13,7 @@ async function carregarUsuarios() {
     }
 
     try {
-        const resposta = await fetch('http://localhost:8000/admin/', {
+        const resposta = await fetch('https://tere-verde-back.onrender.com/admin/', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -117,7 +117,7 @@ if (btnConfirmarDelecao) {
         btnConfirmarDelecao.innerHTML = 'Excluindo...';
 
         try {
-            const resposta = await fetch(`http://localhost:8000/admin/${idUsuarioParaDeletar}`, {
+            const resposta = await fetch(`https://tere-verde-back.onrender.com/admin/${idUsuarioParaDeletar}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
@@ -165,7 +165,7 @@ if (btnSalvarNovoAdmin) {
         btnSalvarNovoAdmin.disabled = true;
 
         try {
-            const resposta = await fetch('http://localhost:8000/admin/', {
+            const resposta = await fetch('https://tere-verde-back.onrender.com/admin/', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -243,7 +243,7 @@ if (btnSalvarEdicao) {
         if (senha) dadosParaAtualizar.senha = senha;
 
         try {
-            const resposta = await fetch(`http://localhost:8000/admin/${id}`, {
+            const resposta = await fetch(`https://tere-verde-back.onrender.com/admin/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
