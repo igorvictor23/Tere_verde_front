@@ -212,6 +212,6 @@ btnEnviarInscricao.addEventListener('click', () => {
 });
 
 document.getElementById('btn-buscar-eventos').addEventListener('click', aplicarFiltros);
-=======
+
 document.getElementById('btn-buscar-eventos').addEventListener('click', aplicarFiltros);
->>>>>>> bfd113a16a81ca500c5e1ad89914441c51dad3b1
+
