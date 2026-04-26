@@ -205,11 +205,12 @@ if (btnEnviarInscricao !== null) {
                 toastMensagem.classList.add('oculto');
             }, 3500);
 
-        // 5. Limpa o input
-        inputEmail.value = '';
-    } else {
-        alert("Por favor, insira um e-mail válido com @.");
-    }
-});
+            // 5. Limpa o input
+            inputEmail.value = '';
+        } else {
+            alert("Por favor, insira um e-mail válido com @.");
+        }
+    });
+}
 
 document.getElementById('btn-buscar-eventos').addEventListener('click', aplicarFiltros);
