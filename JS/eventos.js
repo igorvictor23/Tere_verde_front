@@ -167,7 +167,6 @@ function aplicarFiltros() {
     renderizarCards(eventosFiltrados);
 }
 
-
 // =========================================================
 // 5. LÓGICA DO MODAL E TOAST DE INSCRIÇÃO
 // =========================================================
@@ -213,4 +212,8 @@ if (btnEnviarInscricao !== null) {
     });
 }
 
-document.getElementById('btn-buscar-eventos').addEventListener('click', aplicarFiltros);
+// Lógica de Filtragem (Protegida contra null)
+const btnBuscarEventos = document.getElementById('btn-buscar-eventos');
+if (btnBuscarEventos !== null) {
+    btnBuscarEventos.addEventListener('click', aplicarFiltros);
+}
