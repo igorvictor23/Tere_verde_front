@@ -169,7 +169,7 @@ function aplicarFiltros() {
     renderizarCards(eventosFiltrados);
 }
 
-<<<<<<< HEAD
+
 // =========================================================
 // 5. LÓGICA DO MODAL E TOAST DE INSCRIÇÃO
 // =========================================================
