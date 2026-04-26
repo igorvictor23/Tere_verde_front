@@ -93,8 +93,6 @@ function renderizarCards(eventos) {
             document.getElementById('modal-inscricao').classList.remove('oculto');
         });
 
-        
-
         container.appendChild(card);
     });
 }
@@ -179,30 +177,33 @@ const btnEnviarInscricao = document.getElementById('btn-enviar-inscricao');
 const inputEmail = document.getElementById('input-email');
 const toastMensagem = document.getElementById('toast-mensagem');
 
-// Fechar Modal
-btnFecharModal.addEventListener('click', () => {
-    modalInscricao.classList.add('oculto');
-    inputEmail.value = ''; // Limpa o campo
-});
-
-// Enviar e mostrar Toast
-btnEnviarInscricao.addEventListener('click', () => {
-    const email = inputEmail.value.trim();
-
-    if (email !== '' && email.includes('@')) {
-        // 1. Esconde o modal
+// Fechar Modal (Protegido contra null)
+if (btnFecharModal !== null) {
+    btnFecharModal.addEventListener('click', () => {
         modalInscricao.classList.add('oculto');
-        
-        // 2. Escreve a mensagem no toast
-        toastMensagem.textContent = `Inscrição enviada para o email: ${email}`;
-        
-        // 3. Mostra o toast
-        toastMensagem.classList.remove('oculto');
-        
-        // 4. Esconde o toast depois de 3.5 segundos
-        setTimeout(() => {
-            toastMensagem.classList.add('oculto');
-        }, 3500);
+        inputEmail.value = ''; // Limpa o campo
+    });
+}
+
+// Enviar e mostrar Toast (Protegido contra null)
+if (btnEnviarInscricao !== null) {
+    btnEnviarInscricao.addEventListener('click', () => {
+        const email = inputEmail.value.trim();
+
+        if (email !== '' && email.includes('@')) {
+            // 1. Esconde o modal
+            modalInscricao.classList.add('oculto');
+            
+            // 2. Escreve a mensagem no toast
+            toastMensagem.textContent = `Inscrição enviada para o email: ${email}`;
+            
+            // 3. Mostra o toast
+            toastMensagem.classList.remove('oculto');
+            
+            // 4. Esconde o toast depois de 3.5 segundos
+            setTimeout(() => {
+                toastMensagem.classList.add('oculto');
+            }, 3500);
 
         // 5. Limpa o input
         inputEmail.value = '';
