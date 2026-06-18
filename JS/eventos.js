@@ -202,6 +202,9 @@ if (btnEnviarInscricao !== null) {
             // 1. Esconde o modal
             modalInscricao.classList.add('oculto');
             
+            // GARANTIA: Remove a classe de erro para o sucesso ficar verde
+            toastMensagem.classList.remove('toast-erro'); 
+            
             // 2. Escreve a mensagem no toast
             toastMensagem.textContent = `Inscrição enviada para o email: ${email}`;
             
@@ -215,7 +218,7 @@ if (btnEnviarInscricao !== null) {
 
             // 5. Limpa o input
             inputEmail.value = '';
-            } else {
+        } else {
             toastMensagem.classList.add('toast-erro'); // <-- Adiciona o vermelho
             toastMensagem.textContent = "Por favor, insira um e-mail válido com @.";
             toastMensagem.classList.remove('oculto');
