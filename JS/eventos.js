@@ -127,14 +127,21 @@ async function buscarClimaNaAPI(dataEvento, botao, tagClima, iconeSpan, tempSpan
             tagClima.style.display = 'flex';
             botao.style.display = 'none'; 
 
-        } else {
-            alert("Não foi possível carregar a previsão do tempo para esta data.");
+        }  else {
+            toastMensagem.textContent = "Não foi possível carregar a previsão do tempo para esta data.";
+            toastMensagem.classList.remove('oculto');
+            setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
+            
             botao.innerHTML = textoOriginal;
             botao.disabled = false;
         }
-    } catch (erro) {
+    }  catch (erro) {
         console.error("Erro ao buscar clima:", erro);
-        alert("O serviço de meteorologia está offline no momento.");
+        
+        toastMensagem.textContent = "O serviço de meteorologia está offline no momento.";
+        toastMensagem.classList.remove('oculto');
+        setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
+        
         botao.innerHTML = textoOriginal;
         botao.disabled = false;
     }
@@ -206,9 +213,11 @@ if (btnEnviarInscricao !== null) {
 
             // 5. Limpa o input
             inputEmail.value = '';
-        } else {
-            alert("Por favor, insira um e-mail válido com @.");
-        }
+            } else {
+                toastMensagem.textContent = "Por favor, insira um e-mail válido com @.";
+                toastMensagem.classList.remove('oculto');
+                setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
+            }
     });
 }
 

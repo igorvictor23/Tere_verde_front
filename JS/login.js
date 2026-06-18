@@ -49,7 +49,7 @@ formLogin.addEventListener('submit', async function(event) {
         } else {
             const erro = await resposta.json();
             // ADEUS ALERT! OLÁ TOAST!
-            mostrarNotificacao("Falha no login: " + erro.detail, "erro"); 
+            mostrarNotificacao("Falha no login: " + "E-mail ou senha incorretos.", "erro"); 
             
             // Destrava o botão para o usuário tentar de novo
             btn.innerHTML = textoOriginal;
