@@ -317,6 +317,12 @@
     animation: deslizarCima 0.3s ease-out;
 }
 
+/* Classe modificadora para Toasts de Erro (Mesmo tom do Admin) */
+.toast-inscricao.toast-erro {
+    background-color: #ff5f56;
+    border-left: 6px solid #cc4c45;
+}
+
 @keyframes deslizarCima {
     from { transform: translateY(50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
