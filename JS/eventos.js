@@ -132,6 +132,7 @@ async function buscarClimaNaAPI(dataEvento, botao, tagClima, iconeSpan, tempSpan
             toastMensagem.textContent = "Não foi possível carregar a previsão do tempo para esta data.";
             toastMensagem.classList.remove('oculto');
             setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
+            toastMensagem.classList.remove('toast-erro');
             
             botao.innerHTML = textoOriginal;
             botao.disabled = false;
@@ -143,6 +144,7 @@ async function buscarClimaNaAPI(dataEvento, botao, tagClima, iconeSpan, tempSpan
         toastMensagem.textContent = "Não foi possível carregar a previsão do tempo para esta data.";
         toastMensagem.classList.remove('oculto');
         setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
+        toastMensagem.classList.remove('toast-erro');
         
         botao.innerHTML = textoOriginal;
         botao.disabled = false;
@@ -223,6 +225,7 @@ if (btnEnviarInscricao !== null) {
             toastMensagem.textContent = "Por favor, insira um e-mail válido com @.";
             toastMensagem.classList.remove('oculto');
             setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
+            toastMensagem.classList.remove('toast-erro');
         }
     });
 }
