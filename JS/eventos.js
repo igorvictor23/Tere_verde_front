@@ -123,7 +123,7 @@ async function buscarClimaNaAPI(dataEvento, botao, tagClima, iconeSpan, tempSpan
             iconeSpan.textContent = dadosClima.emoji;
             tempSpan.textContent = `${dadosClima.temperatura}°C`;
 
-            // 4. Mágica do Layout: Mostra a tag em cima da foto e esconde o botão
+           // 4. Mágica do Layout: Mostra a tag em cima da foto e esconde o botão
             tagClima.style.display = 'flex';
             botao.style.display = 'none'; 
 
@@ -131,20 +131,24 @@ async function buscarClimaNaAPI(dataEvento, botao, tagClima, iconeSpan, tempSpan
             toastMensagem.classList.add('toast-erro'); // <-- Adiciona o vermelho
             toastMensagem.textContent = "Não foi possível carregar a previsão do tempo para esta data.";
             toastMensagem.classList.remove('oculto');
-            setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
-            toastMensagem.classList.remove('toast-erro');
+            setTimeout(() => {
+                toastMensagem.classList.add('oculto');
+                toastMensagem.classList.remove('toast-erro');
+            }, 3500);
             
             botao.innerHTML = textoOriginal;
             botao.disabled = false;
         }
-    }  catch (erro) {
+   }  catch (erro) {
         console.error("Erro ao buscar clima:", erro);
         
         toastMensagem.classList.add('toast-erro'); // <-- Adiciona o vermelho
         toastMensagem.textContent = "Não foi possível carregar a previsão do tempo para esta data.";
         toastMensagem.classList.remove('oculto');
-        setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
-        toastMensagem.classList.remove('toast-erro');
+        setTimeout(() => {
+            toastMensagem.classList.add('oculto');
+            toastMensagem.classList.remove('toast-erro');
+        }, 3500);
         
         botao.innerHTML = textoOriginal;
         botao.disabled = false;
@@ -224,8 +228,10 @@ if (btnEnviarInscricao !== null) {
             toastMensagem.classList.add('toast-erro'); // <-- Adiciona o vermelho
             toastMensagem.textContent = "Por favor, insira um e-mail válido com @.";
             toastMensagem.classList.remove('oculto');
-            setTimeout(() => { toastMensagem.classList.add('oculto'); }, 3500);
-            toastMensagem.classList.remove('toast-erro');
+            setTimeout(() => {
+                toastMensagem.classList.add('oculto');
+                toastMensagem.classList.remove('toast-erro');
+            }, 3500);
         }
     });
 }
